@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trackezz — Stats</title>
+  <link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <button class="back-btn" id="backBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="header-title">
+      <div class="logo-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#657166" stroke-width="2.2">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+        </svg>
+      </div>
+      <span>Your Stats</span>
+    </div>
+    <div style="width:32px"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="content" id="content">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Crunching your data...</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="stats.js"></script>
+</body>
+</html>
