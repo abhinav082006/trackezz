@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trackezz — Resume Match</title>
+  <link rel="stylesheet" href="match.css" />
+</head>
+<body>
+<div class="app">
+
+  <div class="header">
+    <button class="back-btn" id="backBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="header-title">
+      <div class="logo-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#657166" stroke-width="2.2">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <span id="headerTitle">Resume Match</span>
+    </div>
+    <div style="width:32px"></div>
+  </div>
+
+  <div class="content" id="content">
+
+    <!-- Resume setup -->
+    <div id="resumeSetup" style="display:none">
+      <div class="setup-card">
+        <div class="setup-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#99CDD8" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <h3>Upload Your Resume</h3>
+        <p>Upload your resume PDF once — Trackezz extracts the text and uses it for all future match checks. Your file never leaves your device.</p>
+        <label class="upload-btn" id="uploadLabel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Choose PDF File
+          <input type="file" id="resumeFile" accept=".pdf" style="display:none" />
+        </label>
+        <p class="upload-hint" id="uploadStatus"></p>
+      </div>
+    </div>
+
+    <!-- Job description input -->
+    <div id="jobDescSection" style="display:none">
+      <div class="resume-status">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4FA8BA" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+        <span id="resumeFileName">Resume uploaded</span>
+        <button id="changeResumeBtn">Change</button>
+      </div>
+      <div class="job-info-bar" id="jobInfoBar" style="display:none">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8FA89E" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        <span id="jobInfoText"></span>
+      </div>
+      <div class="section-label">Paste Job Description</div>
+      <textarea id="jobDesc" placeholder="Paste the full job description here — role requirements, skills needed, responsibilities. The more detail, the more accurate the match score."></textarea>
+      <button class="analyze-btn" id="analyzeBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/></svg>
+        Analyse Match
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingSection" style="display:none">
+      <div class="loading">
+        <div class="loading-dots">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <p class="loading-text">Analysing your resume...</p>
+        <p class="loading-sub">Gemini is comparing your skills against the job requirements</p>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsSection" style="display:none">
+      <div class="score-card">
+        <div class="score-circle">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="46" fill="none" stroke="#E8E0D5" stroke-width="10"/>
+            <circle cx="55" cy="55" r="46" fill="none" stroke="#99CDD8" stroke-width="10"
+              stroke-dasharray="289" stroke-dashoffset="289"
+              stroke-linecap="round" transform="rotate(-90 55 55)"
+              id="scoreArc"/>
+          </svg>
+          <div class="score-text">
+            <span class="score-num" id="scoreNum">0</span>
+            <span class="score-pct">%</span>
+          </div>
+        </div>
+        <div class="score-label" id="scoreLabel"></div>
+        <div class="score-sub" id="scoreSub"></div>
+      </div>
+
+      <div class="results-body" id="resultsBody"></div>
+
+      <button class="re-analyze-btn" id="reAnalyzeBtn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,4 1,10 7,10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Try Different Job Description
+      </button>
+    </div>
+
+  </div>
+</div>
+<script src="../lib/pdf.min.js"></script>
+<script src="match.js"></script>
+</body>
+</html>
