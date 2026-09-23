@@ -45,5 +45,4 @@ You have full control over your data at all times:
 ---
 
 ## 5. Contact Us
-
-If you have any questions or feedback regarding this Privacy Policy, please open an issue on our [GitHub repository](https://github.com/abhinav082006/trackezz) or contact the developer via email at **abhinavgadipelli0806@gmail.com**.
+If you have any questions or feedback regarding this Privacy Policy, please open an issue on our [GitHub repository](https://github.com/abhinav082006/trackezz) or contact the developer via email at **trackezzsupport@gmail.com**.
